@@ -36,7 +36,7 @@ To add or update a project, edit the `projects` array in `src/App.jsx`. Each pro
 Other things to check:
 - Skills should reflect tools you can confidently discuss.
 - Your CV is served from `public/Ojetola_Roqeeb_CV.pdf` (Download CV buttons). Replace that file to update it.
-- After deploying, add the `og:image` tag in `index.html` with your full site URL so link previews show your photo (`public/og-image.jpg`).
+- Live site: https://roqeebojetola.vercel.app (link previews use `public/og-image.jpg`).
 
 Original full-size images are kept in `original-images/` (ignored by git).
 
