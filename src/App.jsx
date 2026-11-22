@@ -12,7 +12,7 @@ import ecommerceScreenshot from './assets/ecommerce-screenshot.jpg'
 import povertyWealthScreens from './assets/poverty-wealth-app.jpg'
 
 const githubUrl = 'https://github.com/Roqeeb-lanre'
-const linkedinUrl = 'https://www.linkedin.com/in/roqeeb-ojetola-ba147533b'
+const linkedinUrl = 'https://www.linkedin.com/in/roqeeb-ojetola'
 const email = 'ojetolaroqeeb40@gmail.com'
 const cvUrl = '/Ojetola_Roqeeb_CV.pdf'
 
