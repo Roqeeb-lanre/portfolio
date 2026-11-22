@@ -1,0 +1,8 @@
+node_modules/
+dist/
+original-images/
+.DS_Store
+.env
+.env.*
+*.log
+.vscode/
