@@ -3,12 +3,13 @@ import { motion } from 'framer-motion'
 import {
   ArrowDown, ArrowRight, ArrowUpRight, Github, Linkedin, Mail, Menu, X,
   Code2, Database, BrainCircuit, ShoppingBag, Layers3, Terminal, Smartphone, GitBranch,
-  ExternalLink, ChevronRight, Award, BadgeCheck, FileCheck2, FileText, Download
+  ExternalLink, ChevronRight, Award, BadgeCheck, FileCheck2, FileText, Download, Sparkles
 } from 'lucide-react'
 import roqeebPhoto from './assets/roqeeb.jpg'
 import cpnCertificate from './assets/cpn-registration.jpg'
 import newHorizonsCertificate from './assets/new-horizons-ai.jpg'
 import ecommerceScreenshot from './assets/ecommerce-screenshot.jpg'
+import ribraScreenshot from './assets/ribra-screenshot.jpg'
 import povertyWealthScreens from './assets/poverty-wealth-app.jpg'
 
 const githubUrl = 'https://github.com/Roqeeb-lanre'
@@ -17,17 +18,33 @@ const email = 'ojetolaroqeeb40@gmail.com'
 const cvUrl = '/Ojetola_Roqeeb_CV.pdf'
 
 const skills = [
-  { title: 'Frontend', icon: Code2, items: ['HTML', 'CSS', 'JavaScript', 'React', 'Tailwind CSS'] },
-  { title: 'Backend', icon: Terminal, items: ['Node.js', 'Express.js', 'REST APIs', 'Authentication', 'Payment integration'] },
+  { title: 'Frontend', icon: Code2, items: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Tailwind CSS'] },
+  { title: 'Backend', icon: Terminal, items: ['Node.js', 'Express.js', 'REST APIs', 'Authentication', 'Payment integration', 'Automated testing'] },
   { title: 'Database', icon: Database, items: ['MongoDB', 'Database design'] },
-  { title: 'AI & Machine Learning', icon: BrainCircuit, items: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Classification', 'Model evaluation', 'ONNX'] },
+  { title: 'AI & Machine Learning', icon: BrainCircuit, items: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Classification', 'Model evaluation', 'ONNX', 'LLM APIs (Gemini)'] },
   { title: 'Mobile', icon: Smartphone, items: ['Flutter', 'Dart'] },
-  { title: 'Tools', icon: GitBranch, items: ['Git', 'GitHub', 'VS Code', 'Vercel', 'Cloudinary'] },
+  { title: 'Tools', icon: GitBranch, items: ['Git', 'GitHub', 'GitHub Actions', 'VS Code', 'Vercel', 'Render', 'Cloudinary'] },
 ]
 
 const projects = [
   {
     number: '01',
+    featured: true,
+    type: 'FULL-STACK SAAS · AI',
+    title: 'Ribra: AI Career Assistant',
+    description: 'A full-stack SaaS that helps job seekers go from CV to offer: an ATS-style CV analyzer, CV-vs-job matching with missing keywords, AI cover letters, interview practice with scored feedback, and a drag-and-drop application tracker with daily reminder emails. Includes Google sign-in, Paystack subscriptions, data export and account deletion.',
+    status: 'Live',
+    stack: ['React', 'TypeScript', 'Node.js', 'Express', 'MongoDB', 'Google Gemini', 'Paystack', 'Tailwind CSS', 'Vitest'],
+    icon: Sparkles,
+    tone: 'violet',
+    image: ribraScreenshot,
+    imageAlt: 'Ribra landing page with the headline "Land the job, from CV to offer" and five feature cards',
+    demoUrl: 'https://ribra.vercel.app',
+    repoUrl: 'https://github.com/Roqeeb-lanre/ribra',
+    note: 'Highlights: rotating refresh-token auth, schema-validated AI output with model fallback, HMAC-verified payment webhooks, atomic usage limits, scheduled jobs with GitHub Actions and 130+ automated tests in CI.',
+  },
+  {
+    number: '02',
     type: 'FULL-STACK WEB DEVELOPMENT',
     title: 'MERN E-commerce Platform',
     description: 'A full-stack online store with product browsing, search and categories, user accounts, a shopping cart, Paystack payments, an admin dashboard and Cloudinary image uploads.',
@@ -41,7 +58,7 @@ const projects = [
     repoUrl: 'https://github.com/Roqeeb-lanre/ecommerce-mern',
   },
   {
-    number: '02',
+    number: '03',
     type: 'AI / MACHINE LEARNING',
     title: 'Poverty & Wealth Prediction',
     description: 'Final year research project and Flutter app that predicts socioeconomic status (Low, Medium, High) in Nigeria from mobile-phone metadata. Five models were compared, and Random Forest gave the most stable results.',
@@ -77,8 +94,8 @@ function ProjectCard({ project, total }) {
   const isViolet = project.tone === 'violet'
 
   return (
-    <motion.article initial="hidden" whileInView="show" viewport={{ once: true, amount: .2 }} variants={fadeUp} className="glass group flex flex-col overflow-hidden rounded-3xl">
-      <div className={`relative flex h-56 items-center justify-center overflow-hidden ${isViolet ? 'bg-gradient-to-br from-violet/20 via-[#17162c] to-panel' : 'bg-gradient-to-br from-cyan/15 via-[#10232a] to-panel'}`}>
+    <motion.article initial="hidden" whileInView="show" viewport={{ once: true, amount: .2 }} variants={fadeUp} className={`glass group flex flex-col overflow-hidden rounded-3xl ${project.featured ? 'lg:col-span-2' : ''}`}>
+      <div className={`relative flex ${project.featured ? 'h-64 sm:h-80 lg:h-[26rem]' : 'h-56'} items-center justify-center overflow-hidden ${isViolet ? 'bg-gradient-to-br from-violet/20 via-[#17162c] to-panel' : 'bg-gradient-to-br from-cyan/15 via-[#10232a] to-panel'}`}>
         {project.image ? (
           <a href={project.demoUrl || project.repoUrl} target="_blank" rel="noreferrer" className="absolute inset-0" aria-label={`Open ${project.title} ${project.demoUrl ? 'live demo' : 'on GitHub'}`}>
             <img src={project.image} alt={project.imageAlt} loading="lazy" className="h-full w-full object-cover object-top transition duration-500 group-hover:scale-[1.03]" />
@@ -232,7 +249,7 @@ function App() {
                   I'm a Computer Science graduate of Afe Babalola University and a registered member of the Computer Professionals (Registration Council) of Nigeria (GMCPN). I trained in MERN full-stack development at Aptech and in Machine Learning, Robotics and AI at New Horizons.
                 </p>
                 <p className="mt-4 leading-8 text-slate-400">
-                  I've built and deployed a full-stack e-commerce platform with payments, an admin dashboard and image uploads, and for my final year research I compared five machine-learning models for predicting socioeconomic status and shipped the result in a Flutter app. I'm looking for a role where I can keep building useful products across the stack.
+                  I've built and deployed Ribra, an AI career assistant SaaS with subscriptions, scheduled emails and 130+ automated tests, and a full-stack e-commerce platform with payments, an admin dashboard and image uploads, and for my final year research I compared five machine-learning models for predicting socioeconomic status and shipped the result in a Flutter app. I'm looking for a role where I can keep building useful products across the stack.
                 </p>
                 <a href={githubUrl} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-violet hover:text-cyan">Explore my GitHub <ArrowUpRight size={16} /></a>
               </div>
