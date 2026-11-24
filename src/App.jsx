@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion } from 'framer-motion'
 import {
   ArrowDown, ArrowRight, ArrowUpRight, Github, Linkedin, Mail, Menu, X,
-  Code2, Database, BrainCircuit, ShoppingBag, Layers3, Terminal, Smartphone, GitBranch,
+  Code2, Database, BrainCircuit, ShoppingBag, House, Layers3, Terminal, Smartphone, GitBranch,
   ExternalLink, ChevronRight, Award, BadgeCheck, FileCheck2, FileText, Download, Sparkles
 } from 'lucide-react'
 import roqeebPhoto from './assets/roqeeb.jpg'
@@ -10,6 +10,7 @@ import cpnCertificate from './assets/cpn-registration.jpg'
 import newHorizonsCertificate from './assets/new-horizons-ai.jpg'
 import ecommerceScreenshot from './assets/ecommerce-screenshot.jpg'
 import ribraScreenshot from './assets/ribra-screenshot.jpg'
+import roggaScreenshot from './assets/rogga-screenshot.jpg'
 import povertyWealthScreens from './assets/poverty-wealth-app.jpg'
 
 const githubUrl = 'https://github.com/Roqeeb-lanre'
@@ -21,7 +22,7 @@ const skills = [
   { title: 'Frontend', icon: Code2, items: ['HTML', 'CSS', 'JavaScript', 'TypeScript', 'React', 'Tailwind CSS'] },
   { title: 'Backend', icon: Terminal, items: ['Node.js', 'Express.js', 'REST APIs', 'Authentication', 'Payment integration', 'Automated testing'] },
   { title: 'Database', icon: Database, items: ['MongoDB', 'Database design'] },
-  { title: 'AI & Machine Learning', icon: BrainCircuit, items: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Classification', 'Model evaluation', 'ONNX', 'LLM APIs (Gemini)'] },
+  { title: 'AI & Machine Learning', icon: BrainCircuit, items: ['Python', 'Scikit-learn', 'Pandas', 'NumPy', 'Classification', 'Model evaluation', 'ONNX', 'LLM APIs (Gemini)', 'Embeddings & vector search'] },
   { title: 'Mobile', icon: Smartphone, items: ['Flutter', 'Dart'] },
   { title: 'Tools', icon: GitBranch, items: ['Git', 'GitHub', 'GitHub Actions', 'VS Code', 'Vercel', 'Render', 'Cloudinary'] },
 ]
@@ -45,6 +46,21 @@ const projects = [
   },
   {
     number: '02',
+    featured: true,
+    type: 'FULL-STACK MERN · AI',
+    title: 'Rogga: Verified Real Estate for Lagos & Ogun',
+    description: 'A property platform that connects house seekers with owners and agents in Lagos and Ogun State. Seekers search with filters and a live map, save homes, message agents and book inspections; agents list properties through a guided form and manage inquiries and viewings from a dashboard; admins approve every listing, verify agents from private ID uploads and act on reports of fake listings. AI recommendations suggest similar homes and personal picks.',
+    status: 'Live',
+    stack: ['React', 'Node.js', 'Express', 'MongoDB', 'Atlas Vector Search', 'Voyage AI', 'Leaflet', 'Cloudinary', 'Tailwind CSS'],
+    icon: House,
+    tone: 'cyan',
+    image: roggaScreenshot,
+    imageAlt: 'Rogga home page with the headline "Find a verified home, straight from owners and trusted agents", a search bar and listing results',
+    demoUrl: 'https://rogga-ebon.vercel.app',
+    note: 'Highlights: geo search with map-bounds filtering, server-side check that every pin is inside Lagos or Ogun, embedding-based recommendations with a rules fallback, private signed links for ID documents, email alerts with Resend, and deployment on Vercel + Render. Listings marked DEMO are sample data.',
+  },
+  {
+    number: '03',
     type: 'FULL-STACK WEB DEVELOPMENT',
     title: 'MERN E-commerce Platform',
     description: 'A full-stack online store with product browsing, search and categories, user accounts, a shopping cart, Paystack payments, an admin dashboard and Cloudinary image uploads.',
@@ -58,7 +74,7 @@ const projects = [
     repoUrl: 'https://github.com/Roqeeb-lanre/ecommerce-mern',
   },
   {
-    number: '03',
+    number: '04',
     type: 'AI / MACHINE LEARNING',
     title: 'Poverty & Wealth Prediction',
     description: 'Final year research project and Flutter app that predicts socioeconomic status (Low, Medium, High) in Nigeria from mobile-phone metadata. Five models were compared, and Random Forest gave the most stable results.',
@@ -249,7 +265,7 @@ function App() {
                   I'm a Computer Science graduate of Afe Babalola University and a registered member of the Computer Professionals (Registration Council) of Nigeria (GMCPN). I trained in MERN full-stack development at Aptech and in Machine Learning, Robotics and AI at New Horizons.
                 </p>
                 <p className="mt-4 leading-8 text-slate-400">
-                  I've built and deployed Ribra, an AI career assistant SaaS with subscriptions, scheduled emails and 130+ automated tests, and a full-stack e-commerce platform with payments, an admin dashboard and image uploads, and for my final year research I compared five machine-learning models for predicting socioeconomic status and shipped the result in a Flutter app. I'm looking for a role where I can keep building useful products across the stack.
+                  I've built and deployed Ribra, an AI career assistant SaaS with subscriptions, scheduled emails and 130+ automated tests; Rogga, a verified real estate platform for Lagos and Ogun with maps and AI recommendations; a full-stack e-commerce platform with payments, an admin dashboard and image uploads; and for my final year research I compared five machine-learning models for predicting socioeconomic status and shipped the result in a Flutter app. I'm looking for a role where I can keep building useful products across the stack.
                 </p>
                 <a href={githubUrl} target="_blank" rel="noreferrer" className="mt-7 inline-flex items-center gap-2 text-sm font-bold text-violet hover:text-cyan">Explore my GitHub <ArrowUpRight size={16} /></a>
               </div>

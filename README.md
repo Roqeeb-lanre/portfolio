@@ -49,6 +49,7 @@ Original full-size images are kept in `original-images/` (ignored by git).
 
 ## Notes
 - Ribra (featured) links to its live app on Vercel and its GitHub repository.
+- Rogga (featured) links to its live site on Vercel; its repository is private, so it has no Source code button.
 - The e-commerce project links to its live demo on Vercel and its GitHub repository.
 - The poverty/wealth prediction project is described as an academic project. Keep the synthetic-data note if that accurately reflects your implementation.
 - Do not publish private credentials, API keys or personal data in this repository.
